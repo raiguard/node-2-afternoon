@@ -5,6 +5,8 @@ const messagesController = require("./controllers/messages_controller");
 
 app.use(express.json());
 
+app.use(express.static("./public/build"));
+
 app.post("/api/messages", messagesController.create);
 app.get("/api/messages", messagesController.read);
 app.put("/api/messages/:id", messagesController.update);
